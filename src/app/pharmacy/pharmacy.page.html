@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Chemists</ion-title>
+    </ion-toolbar>
+  </ion-header>
+   
+  <ion-content >
+    
+   <!-- <ion-list>
+      <ion-item button *ngFor="let dev of pharmacies">
+        <ion-label>
+           <h2>{{ dev.name }}</h2>
+           <p>{{ dev.location }} </p>
+         </ion-label>   
+      </ion-item>  
+    </ion-list> -->
+    <ion-item button *ngFor="let item of chemists" [routerLink]="['/chemdetails']">
+        <ion-card-header>
+            <ion-card-title>{{item.Name}} </ion-card-title>
+            <ion-card-subtitle>From: {{item.Address}}</ion-card-subtitle>
+          </ion-card-header>
+    </ion-item>
+  </ion-content>

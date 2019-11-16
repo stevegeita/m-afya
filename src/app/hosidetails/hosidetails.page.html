@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-title>{{idea.name}} Hospital</ion-title>
+</ion-header>
+<ion-content>
+      <ion-row>
+        <h2>Name</h2>
+        <br>
+        <p>{{idea.Name}}</p>
+      </ion-row>
+      <ion-row>
+        <p>Located at {{idea.Address}}</p>
+      </ion-row>
+      <ion-row>
+        <h2> Opening hours</h2>
+        <p>{{idea.Opentime}}</p>
+        <h2> Closing hours</h2>
+        <p>{{idea.Closetime}}</p>
+      </ion-row>
+      <ion-row>
+        <h2>Contacts</h2>
+        <p>{{idea.contact}}</p>
+      </ion-row>
+      <ion-row>
+        <h2>Services</h2>
+        <ul>
+          <p>{{idea.dental}}</p>
+          <p>{{idea.inpatient}}</p>
+          <p>{{idea.maternity}}</p>
+          <p>{{idea.optical}}</p>
+          <p>{{idea.outpatient}}</p>
+          <p>{{idea.radiography}}</p>
+        </ul>
+      </ion-row>
+      <ion-row>
+        <h2>Insurances accepted</h2>
+        <ul>
+            <p>{{idea.aon}}</p>
+            <p>{{idea.apa}}</p>
+            <p>{{idea.jubilee}}</p>
+            <p>{{idea.madison}}</p> 
+            <p>{{idea.minet}}</p> 
+            <p>{{idea.nhif}}</p>
+            <p>{{idea.resolution}}</p>
+            <p>{{idea.uap}}</p>
+        </ul>
+      </ion-row>
+      <ion-row>
+        <ion-button>Get directions</ion-button>
+      </ion-row>
+</ion-content>

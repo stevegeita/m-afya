@@ -1,0 +1,83 @@
+window.addEventListener('load', function() {
+    var url = "/docs/search/";
+    function searchFunction() {
+        var searchQuery = searchForm["q"].value;
+        var body = {
+            "query": searchQuery,
+            "version": window.docMeta.version
+        };
+        var http = new XMLHttpRequest();
+        http.open("POST", url, true);
+        http.setRequestHeader("Content-type", "application/json");
+        http.send(JSON.stringify(body));
+        http.onload = function() {
+            handleResult(http);
+        }
+    }
+
+    function handleResult(http) {
+        var resultDiv = document.getElementById("search-results");
+        while (resultDiv.firstChild) {
+            resultDiv.removeChild(resultDiv.firstChild);
+        }
+        if(http.readyState == 4 && http.status == 200) {
+            var resultArray = JSON.parse(http.responseText);
+            var resultSummaryDiv = resultSummary(resultArray);
+            resultDiv.appendChild(resultSummaryDiv);
+            var resultItemsDiv = resultItems(resultArray);
+            resultDiv.appendChild(resultItemsDiv);
+            showResult(resultDiv);
+        } else {
+            var errorText = `Search failed. Response status: ${http.status}`;
+            var errorElement = document.createElement('div');
+            errorElement.appendChild(document.createTextNode(errorText));
+            resultDiv.appendChild(errorElement);
+        }
+    }
+
+    function resultSummary(result) {
+        var summaryText = `${result.length} result(s) found.`;
+        var summaryDiv = document.createElement('div');
+        summaryDiv.classList.add('search-result-summary');
+        var summaryTextNode = document.createTextNode(summaryText);
+        summaryDiv.appendChild(summaryTextNode);
+        return summaryDiv;
+    }
+
+    function resultItems(result) {
+        var resultItemsDiv = document.createElement('div');
+        resultItemsDiv.classList.add('search-result-items');
+        result.forEach(function(element) {
+            resultItemsDiv.appendChild(resultItem(element['uri'], element['title'], element['description']));
+        });
+        return resultItemsDiv;
+    }
+
+    function resultItem(url, title, description) {
+        var itemDiv = document.createElement('div');
+        itemDiv.classList.add('search-result-item');
+        var link = document.createElement('a');
+        link.setAttribute('href', url);
+        var linkText = document.createTextNode(title);
+        link.appendChild(linkText);
+        itemDiv.appendChild(link);
+        var descriptionDiv = document.createElement('div');
+        descriptionDiv.classList.add('search-result-item-description');
+        var descriptionText = document.createTextNode(description);
+        descriptionDiv.appendChild(descriptionText);
+        itemDiv.appendChild(descriptionDiv);
+        return itemDiv;
+    }
+
+    function showResult(resultDiv) {
+        resultDiv.classList.remove('hidden');
+        window.scrollTo(0, 0);
+    }
+
+    var searchForm = document.getElementById("search-form")
+    searchForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        searchFunction();
+    });
+
+});
