@@ -20,19 +20,19 @@ public loadedhosilist: any[];
 constructor(private ideaService: IdeaService,private firestore: AngularFirestore, public navCtrl: NavController) { }
  ngOnInit() {
   this.ideas = this.ideaService.getIdeas();
-  this.firestore.collection('hospital').valueChanges().subscribe(hosilist =>{
+  this.firestore.collection('hospital').valueChanges({idField: 'id'}).subscribe(hosilist =>{
     this.hosilist= hosilist;
     this.loadedhosilist= hosilist;
   });
+  
  }
  initializeItems(): void {
   this.hosilist = this.loadedhosilist;
 }
-filterList(evt) {
+filterList(event) {
   this.initializeItems();
-
-  const searchTerm = evt.srcElement.value;
-
+  let searchTerm = event.target.value.toLowerCase();
+  console.log(searchTerm)
   if (!searchTerm) {
     return;
   }

@@ -5,17 +5,17 @@
   </ion-header>
    
   <ion-content>
-      <ion-searchbar showcancelbutton="" (ioninput)="filterList($event)"></ion-searchbar>
+      <ion-searchbar showcancelbutton="" (keyup)="filterList($event)"></ion-searchbar>
     <ion-list>
-      <ion-item button *ngFor="let idea of hosilist" [routerLink]="['/hosidetails', idea.id]">
+      <ion-item button *ngFor="let idea of hosilist " [routerLink]="['/hosidetails', idea.id]">
         <ion-label>
             <h4>{{idea.Name}}</h4><br>
-            <!-- <p>{{idea.Address}}</p> -->
+            <p>{{idea.Address}}</p>
             <p></p>
         </ion-label>  
       </ion-item>
       </ion-list>
-      <script>
+      <!-- <script>
           const searchbar = document.querySelector('ion-searchbar');
           const items = Array.from(document.querySelector('ion-list').children);
           searchbar.addEventListener('ionInput', handleInput);
@@ -28,5 +28,5 @@
               });
             });
           }
-        </script>
+        </script> -->
   </ion-content>

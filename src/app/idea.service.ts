@@ -21,10 +21,25 @@ export interface Idea {
 export class IdeaService {
   private ideas: Observable<Idea[]>;
   private ideaCollection: AngularFirestoreCollection<Idea>;
+
+  private chemCollection: AngularFirestoreCollection<Idea>;
+  private chems: Observable<Idea[]>;
+  steve: AngularFirestoreCollection;
+  hosilist: any;
  
   constructor(private afs: AngularFirestore) {
     this.ideaCollection = this.afs.collection<Idea>('hospital');
+    this.chemCollection = this.afs.collection<Idea>('chemist');
     this.ideas = this.ideaCollection.snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+          return { id, ...data};
+        });
+      })
+    );
+    this.chems = this.chemCollection.snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
           const data = a.payload.doc.data();
@@ -38,8 +53,23 @@ export class IdeaService {
   getIdeas(): Observable<Idea[]> {
     return this.ideas;
   }
+  
  
   getIdea(id: string): Observable<Idea> {
+    return this.ideaCollection.doc<Idea>(id).valueChanges().pipe(
+      take(1),
+      map(idea => {
+        idea.id = id;
+        return idea
+      })
+    );
+  }
+  getChems(): Observable<Idea[]> {
+    return this.chems;
+  }
+  
+ 
+  getchem(id: string): Observable<Idea> {
     return this.ideaCollection.doc<Idea>(id).valueChanges().pipe(
       take(1),
       map(idea => {
