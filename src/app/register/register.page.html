@@ -1,0 +1,142 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+
+    <form [formGroup]="signupForm">
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input
+          formControlName="email"
+          type="email"
+          placeholder="Your email address"
+          [class.invalid]="!signupForm.controls['email'].valid && signupForm.controls['email'].touched"
+        >
+        </ion-input>
+       </ion-item>
+      <ion-item
+        class="error-message"
+        *ngIf="!signupForm.controls['email'].valid
+        && signupForm.controls['email'].touched"
+      >
+        <ion-label>Please enter a valid email.</ion-label>
+      </ion-item>
+
+     <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input
+          formControlName="password"
+          type="password"
+          placeholder="Your password"
+          [class.invalid]="!signupForm.controls['password'].valid && signupForm.controls['password'].touched"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item
+        class="error-message"
+        *ngIf="!signupForm.controls['password'].valid  &&
+        signupForm.controls['password'].touched"
+      >
+        <ion-label>Your password needs more than 6 characters.</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Firstname</ion-label>
+        <ion-input
+          formControlName="firstname"
+          type="firstname"
+          placeholder="Your first name"
+          [class.invalid]="!signupForm.controls['firstname'].valid && signupForm.controls['firstname'].touched"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item
+        class="error-message"
+        *ngIf="!signupForm.controls['firstname'].valid  &&
+        signupForm.controls['firstname'].touched"
+      >
+        <ion-label>Your first name.</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Lastname</ion-label>
+        <ion-input
+          formControlName="lastname"
+          type="lastname"
+          placeholder="Your last name"
+          [class.invalid]="!signupForm.controls['lastname'].valid && signupForm.controls['lastname'].touched"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item
+        class="error-message"
+        *ngIf="!signupForm.controls['lastname'].valid  &&
+        signupForm.controls['lastname'].touched"
+      >
+        <ion-label>Your last name.</ion-label>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="stacked">Your Emergency contact</ion-label>
+        <ion-input
+          formControlName="contact"
+          type="contact"
+          placeholder="contact"
+          [class.invalid]="!signupForm.controls['contact'].valid && signupForm.controls['contact'].touched"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item
+        class="error-message"
+        *ngIf="!signupForm.controls['contact'].valid  &&
+        signupForm.controls['contact'].touched"
+      >
+        <ion-label>Your Emergency contact.</ion-label>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Health Insurance</ion-label>
+        <ion-select interface="popover" class="form-control" formControlName="insurance">
+          <ion-select-option value="Aon">Aon</ion-select-option>
+          <ion-select-option value="Apa">Apa</ion-select-option>
+          <ion-select-option value="Jubilee">Jubilee</ion-select-option>
+          <ion-select-option value="Madison">Madison</ion-select-option>
+          <ion-select-option value="Minet">Minet</ion-select-option>
+          <ion-select-option value="Nhif">Nhif</ion-select-option>
+          <ion-select-option value="Resoultion">Resoultion</ion-select-option>
+          <ion-select-option value="Uap">Uap</ion-select-option>
+        </ion-select>
+      </ion-item>
+       
+      <ion-item>
+        <ion-label>Allergies</ion-label>
+        <ion-textarea position="floating"  class="form-control" formControlName="allergies" placeholder="if none leave empty, if multiple seperate by comma"></ion-textarea>
+      </ion-item>
+
+      <ion-item >
+        <ion-label>Blood Group</ion-label>
+        <ion-select interface="popover" formControlName="blood">
+          <ion-select-option value="Aon">A positive</ion-select-option>
+          <ion-select-option value="Apa">A negative</ion-select-option>
+          <ion-select-option value="Jubilee">B positive</ion-select-option>
+          <ion-select-option value="Madison">B negative</ion-select-option>
+          <ion-select-option value="Minet">AB</ion-select-option>
+          <ion-select-option value="Nhif">O positive</ion-select-option>
+          <ion-select-option value="Resoultion">O negative</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" >Drug interactions</ion-label>
+        <ion-textarea class="form-control" formControlName="drugs" placeholder="if none leave empty, if multiple seperate by comma"></ion-textarea>
+      </ion-item>
+
+      <ion-button
+        expand="block"
+        (click)="signupUser(signupForm)"
+        [disabled]="!signupForm.valid"
+      >
+        Create an Account
+      </ion-button>
+    </form>

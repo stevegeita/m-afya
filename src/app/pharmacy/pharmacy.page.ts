@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CrudService } from '../crud.service';
-import { IdeaService, Idea } from '../idea.service';
+import { IdeaService, Idea, Steve } from '../idea.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { NavController } from '@ionic/angular';
 import { Observable } from 'rxjs';
@@ -11,8 +10,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['pharmacy.page.scss']
 })
 export class PharmacyPage {
-  chemists: any;
-  private chems: Observable<Idea[]>;
+
+  private chems: Observable<Steve[]>;
   public chemlist: any[];
   public loadedchemlist: any[];
   
@@ -21,7 +20,7 @@ export class PharmacyPage {
  
   ngOnInit() {
       this.chems = this.ideaService.getChems();
-      this.firestore.collection('chemist').valueChanges().subscribe(chemlist =>{
+      this.firestore.collection('chemist').valueChanges({idField: 'id'}).subscribe(chemlist =>{
         this.chemlist= chemlist;
         this.loadedchemlist= chemlist;
       });

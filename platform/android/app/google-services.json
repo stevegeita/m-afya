@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "539388090152",
+    "firebase_url": "https://macro-climber-230812.firebaseio.com",
+    "project_id": "macro-climber-230812",
+    "storage_bucket": "macro-climber-230812.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539388090152:android:a031655232c5b37d13e21d",
+        "android_client_info": {
+          "package_name": "com.appwind.stevo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539388090152-qgkurdlqa2cfdi5di1th2a7epcfvj6if.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk3oxambhHypUeQCdVytQcbTLuzmUchlM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539388090152-qgkurdlqa2cfdi5di1th2a7epcfvj6if.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539388090152:android:8d89d5184f6e985a13e21d",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539388090152-qgkurdlqa2cfdi5di1th2a7epcfvj6if.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk3oxambhHypUeQCdVytQcbTLuzmUchlM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539388090152-qgkurdlqa2cfdi5di1th2a7epcfvj6if.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

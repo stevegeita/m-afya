@@ -1,83 +1,23 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Account</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-    <ion-list>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-              <ion-avatar>
-                <img src= "../../assets/img/nhif.jpg">
-              </ion-avatar>
-             </ion-col>
-           <ion-col>
-            <ion-row>
-              <p>name: </p>
-              <!-- <ion-item *ngFor="let accs of pharmacies |async">
-                   <p>{{accs.fname}}</p>
-                    <p>{{accs.chronic}}</p>
-                  </ion-item> -->
-                  <p>Steve Geita</p>
-              </ion-row>
-
-            <ion-row>
-              <p>age:</p>
-              <!-- <ion-item *ngFor="let accs of pharmacies">
-                  <p>{{accs.age}}</p>
-                 </ion-item> -->
-                 <p>21 years</p>
-              </ion-row>
-            <ion-row>
-              <p> gender:</p>
-              <!-- <ion-item *ngFor="let accs of pharmacies">
-                <p>{{acss.gender}}</p>
-              </ion-item> -->
-              <p>Male</p>
-            </ion-row>
-          </ion-col>
-        </ion-row>
-       </ion-grid>
-      <ion-grid>
-        <h2>Health insurance </h2>
-        <!-- <ion-item *ngFor="let accs of pharmacies">
-            <p>{{accs.insurance}}</p>
-           </ion-item> -->
-           <p>Nhif</p>
-        <h2>Emergency contact 1:</h2>
-        <ion-button fill="clear">                
-            <p> <a href="tel:+25457598300"> <ion-icon name="call"></ion-icon> +254757598300</a></p>
-           </ion-button>
-        <h2>Emergency contact 2:</h2>
-        <ion-button fill="clear">                 
-            <p> <a href="tel:+254723778080"> <ion-icon name="call"></ion-icon> +254723778080</a></p>
-           </ion-button>
-      </ion-grid>
-      <ion-grid>
-         <h2>Allergies:</h2>
-        <!-- <ion-item *ngFor="let accs of pharmacies">
-            <p>{{ accs.allergies }}</p> -->
-          <!-- </ion-item> -->
-          <p>aspirin</p>
-          <h2>Blood group type:</h2>
-          <!-- <ion-item *ngFor="let accs of pharmacies"> -->
-              <p>O positive</p>
-             <!-- </ion-item> -->
-          <h2>Drug interactions</h2>
-          <!-- <ion-item *ngFor="let accs of pharmacies"> -->
-              <p>Paracetamol</p>
-          <!-- </ion-item> -->
-          <h2>Chronic diseases</h2>
-          <!-- <ion-item *ngFor="let accs of pharmacies"> -->
-              <p>Tb</p>
-           <!-- </ion-item> -->
-         </ion-grid>
-         <!-- <ion-item *ngFor="let acss of pharmacies">
-            <p>{{accs.chronic}}</p>
-            <p>{{accs.lname}}</p>
-            <p>{{accs.fname}}</p>
-         </ion-item> -->
-     </ion-list>
+<ion-content>
+  <ion-list>
+    <ion-row>
+        <ion-button expand="full" fill="clear" [routerLink]="['/register']" >Sign up</ion-button>
+    </ion-row>
+      <ion-row>
+          <ion-button expand="full" fill="clear" [routerLink]="['/login']">Sign in</ion-button>
+      </ion-row>
+      <ion-row>
+          <ion-button expand="full" fill="clear" [routerLink]="['/profile:id']">Basic information</ion-button>
+      </ion-row>
+      <ion-row>
+          <ion-button expand="full" fill="clear"  (click)="logout()"></ion-button>
+      </ion-row>
+     
+  </ion-list>
 </ion-content>

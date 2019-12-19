@@ -1,62 +1,56 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
  
-<ion-content class="bg-class">
-  <ion-grid class= "grid" >
-    <ion-card>
+<ion-content class="view">
+    <div class="card">
         <div>
             <img src="../../assets/img/doctor.png">
         </div>
-    </ion-card>
-  </ion-grid>
-
-  <ion-grid class ="grid">
-    <ion-card>
-        <ion-list>
-            <ion-row>
-                <ion-col>
-                    <ion-button fill="clear"  [routerLink]="['/tabs/hospital']"> 
-                      <ion-avatar>
-                        <img src="../../assets/img/hos.png">
-                       </ion-avatar>
-                      <div class="ion-padding">Hospital</div>
-                     </ion-button>
-                   
-                 </ion-col>
-                <ion-col>
-                    <ion-button fill="clear"  [routerLink]="['/tabs/insurance']">
-                     <ion-avatar>
-                        <img src="../../assets/img/insurance.png"> 
-                      </ion-avatar>
-                      <div class="ion-padding">Insurance</div>
-                     </ion-button> 
-                 </ion-col>
-              </ion-row>
-              <ion-row >
-                  <ion-col>
-                    <ion-button fill="clear" [routerLink]="['/tabs/pharmacy']"> 
-                      <ion-avatar>
-                          <img src="../../assets/img/pharmacy.png">
-                        </ion-avatar> 
-                      <div class="ion-padding">Pharmacies</div>
-                     </ion-button>
-                  </ion-col>
-                  <ion-col >
-                      <ion-button fill="clear" [routerLink]="['/tabs/account']">
-                         <ion-avatar>
-                            <img src="../../assets/img/account.png">
-                          </ion-avatar>
-                        <div class="ion-padding">Account</div>
-                      </ion-button>
-                    </ion-col>
-                </ion-row>
-        </ion-list>
-    </ion-card>
-      
-  </ion-grid>  
-  
-  
+      </div>
+    <div class="ion-text-center">
+      <ion-label>M-afya</ion-label><br>
+      <ion-label>Your Healthcare Informer</ion-label>
+    </div>
+    <div class="card">
+      <ion-card>
+          <ion-list>
+              <ion-row>
+                      <ion-button fill="clear"  [routerLink]="['/tabs/hospital']"> 
+                        <ion-avatar>
+                          <img src="../../assets/img/hos.png">
+                         </ion-avatar>
+                        <div class="ion-label">Hospital</div>
+                       </ion-button>
+                     
+                   </ion-row>
+                  <ion-row>
+                      <ion-button fill="clear"  [routerLink]="['/tabs/insurance']">
+                       <ion-avatar>
+                          <img src="../../assets/img/insurance.png"> 
+                        </ion-avatar>
+                        <div class="ion-label">Insurance</div>
+                       </ion-button> 
+                     </ion-row>
+                <ion-row >
+                      <ion-button fill="clear" [routerLink]="['/tabs/pharmacy']"> 
+                        <ion-avatar>
+                            <img src="../../assets/img/pharmacy.png">
+                          </ion-avatar> 
+                        <div class="ion-label">Pharmacies</div>
+                       </ion-button>
+                   </ion-row>
+                   <ion-row>
+                        <ion-button fill="clear" [routerLink]="['/tabs/account']">
+                           <ion-avatar>
+                              <img src="../../assets/img/account.png">
+                            </ion-avatar>
+                          <div class="ion-label">Account</div>
+                        </ion-button>
+                     </ion-row>
+          </ion-list>
+      </ion-card>
+      </div>
 </ion-content>

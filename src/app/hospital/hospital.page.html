@@ -7,7 +7,7 @@
   <ion-content>
       <ion-searchbar showcancelbutton="" (keyup)="filterList($event)"></ion-searchbar>
     <ion-list>
-      <ion-item button *ngFor="let idea of hosilist " [routerLink]="['/hosidetails', idea.id]">
+      <ion-item button *ngFor="let idea of hosilist " [routerLink]="['/hosidetails', idea.id]" lines="none">
         <ion-label>
             <h4>{{idea.Name}}</h4><br>
             <p>{{idea.Address}}</p>

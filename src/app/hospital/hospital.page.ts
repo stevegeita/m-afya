@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CrudService } from '../crud.service';
 import { IdeaService, Idea} from '../idea.service';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { FormControl } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 
 @Component({

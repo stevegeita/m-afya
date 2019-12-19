@@ -2,3 +2,15 @@
     --background: #5EA0CC !important;
     --height: 200px !important;
   }
+  .view{
+    --background: rgb(94,160,204) !important;
+    --background: linear-gradient(180deg, rgba(94,160,204,1) 0%, rgba(255,255,255,1) 40%) !important;
+  }
+  h2{
+    font-family: Roboto Mono;
+    font-style: italic;
+  }
+  .alignme{
+    text-align: center;
+    width: 150px;
+}

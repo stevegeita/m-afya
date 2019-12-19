@@ -1,52 +1,44 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Insurance</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-grid class="steve">
+    <ion-grid >
         <ion-list>
-            <ion-row justify-content: space-between>
-                <ion-col class="ion-align-self-start">
-                    <img src="../../assets/img/nhif.jpg" [routerLink]="['/tabs/nhif']"> 
-                      <div [routerLink]="['/tabs/nhif']">NHIF</div>
-                 </ion-col>
-                <ion-col class="ion-align-self-end">
-                    <img src="../../assets/img/apa.png" [routerLink]="['/tabs/apa']">
-                       <div [routerLink]="['/tabs/apa']">APA heath insurance</div> 
-                 </ion-col>
-              </ion-row>
-              <ion-row justify-content: space-between>
-                  <ion-col class="ion-align-self-start">
-                     <img src="../../assets/img/equity.png" [routerLink]="['/tabs/equimed']">  
-                        <div [routerLink]="['/tabs/equimed']">Equimed</div>
-                  </ion-col>
-                <ion-col class="ion-align-self-end">
-                    <img src="../../assets/img/kwft.png" [routerLink]="['/tabs/kwft']"> 
-                      <div [routerLink]="['/tabs/kwft']">KWFT health insurance</div>
-                   </ion-col>
-                </ion-row>
-                <ion-row justify-content: space-between>
-                    <ion-col class="ion-align-self-start">
-                      <img src="../../assets/img/minet.png" [routerLink]="['/tabs/minet']"> 
-                          <div [routerLink]="['/tabs/minet']">Minet</div>
-                      </ion-col>
-                    <ion-col class="ion-align-self-end">
-                      <img src="../../assets/img/resolution.png" [routerLink]="['/tabs/resolution']">
-                        <div [routerLink]="['/tabs/resolution']">Resolution Health Insurance</div>
-                      </ion-col>
-                  </ion-row>
-                  <ion-row justify-content: space-between>
-                      <ion-col class="ion-align-self-start">
-                          <img src="../../assets/img/madison.png" [routerLink]="['/tabs/madison']">
-                            <div [routerLink]="['/tabs/madison']">Madison</div>
-                        </ion-col>
-                      <ion-col class="ion-align-self-end">
-                          <img src="../../assets/img/jubilee.png" [routerLink]="['/tabs/jubilee']">
-                              <div [routerLink]="['/tabs/jubilee']">Jubilee Health Insurance</div>
-                        </ion-col>
-                    </ion-row>
+            <ion-card >
+               <img src="../../assets/img/nhif.png" [routerLink]="['/tabs/nhif']"> 
+                <div [routerLink]="['/tabs/nhif']"class="ion-text-center">NHIF</div>
+             </ion-card>
+            <ion-card>
+               <img src="../../assets/img/apa.png" [routerLink]="['/tabs/apa']">
+                 <div [routerLink]="['/tabs/apa']" class="ion-text-center">APA heath insurance</div> 
+               </ion-card>
+            <ion-card>
+                <img src="../../assets/img/equity.png" [routerLink]="['/tabs/equimed']">  
+                <div [routerLink]="['/tabs/equimed']" class="ion-text-center">Equimed</div>
+               </ion-card>
+            <ion-card>
+               <img src="../../assets/img/kwft.png" [routerLink]="['/tabs/kwft']"> 
+               <div [routerLink]="['/tabs/kwft']" class="ion-text-center">KWFT health insurance</div>
+              </ion-card>
+            <ion-card>
+                <img src="../../assets/img/minet.png" [routerLink]="['/tabs/minet']"> 
+                <div [routerLink]="['/tabs/minet']" class="ion-text-center">Minet</div>
+              </ion-card>
+            <ion-card>
+                <img src="../../assets/img/resolution.png" [routerLink]="['/tabs/resolution']">
+                <div [routerLink]="['/tabs/resolution']" class="ion-text-center">Resolution Health Insurance</div>
+               </ion-card>
+            <ion-card>
+                <img src="../../assets/img/madison.png" [routerLink]="['/tabs/madison']">
+                <div [routerLink]="['/tabs/madison']" class="ion-text-center">Madison</div>
+              </ion-card>
+            <ion-card>
+                <img src="../../assets/img/jubilee.png" [routerLink]="['/tabs/jubilee']">
+                <div [routerLink]="['/tabs/jubilee']" class="ion-text-center">Jubilee Health Insurance</div>
+              </ion-card>
         </ion-list>
           
       </ion-grid>  

@@ -1,9 +1,35 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>chemdetails</ion-title>
-  </ion-toolbar>
 </ion-header>
-
-<ion-content>
-
-</ion-content>
+<ion-content class= "view">
+  <ion-grid>
+        <h1><p text-center>Pharmacy Profile</p></h1>
+        <h2><p class="ion-text-capitalize">{{chem.Name}} Pharmacy</p></h2>
+      <div>
+          <ion-icon name="time" size= "large" color="primary"> </ion-icon> <ion-label class="alignme">Operating hours</ion-label>
+        <p class="alignme"><ion-label>{{chem.Opentime}} to {{chem.Closetime}}</ion-label></p>
+      </div>
+   </ion-grid>
+  <ion-grid>
+      <ion-row>
+          <p>Located at {{chem.Address}}</p>
+        </ion-row>
+        <ion-row>
+          <h2>Contacts</h2>
+          <p>{{chem.contact}}</p>
+        </ion-row>
+     </ion-grid>
+   <ion-grid>
+    <ion-row>
+        <h2>Services</h2>
+        <ul>
+          <p>{{chem.dental}}</p>
+          <p>{{chem.maternity}}</p>
+          <p>{{chem.radiography}}</p>
+        </ul>
+      </ion-row>
+</ion-grid>
+    <ion-row>
+        <ion-button>Get directions</ion-button>
+       </ion-row>
+         
+ </ion-content>

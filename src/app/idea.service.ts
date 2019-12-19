@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, DocumentReference } from '@angular/fire/firestore';
 import { map, take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+
  
 export interface Idea {
   id?: string,
@@ -14,7 +15,23 @@ export interface Idea {
   opentime: string,
   closetime:string
 }
- 
+ export interface Steve{
+  id?: string,
+  name: string,
+  address: string,
+ }
+ export interface Profile{
+   id?: string,
+   firstname: string,
+   lastname: string,
+   gender: string,
+   age: string,
+   insurance: string,
+   contact: string,
+   allergies: string,
+   blood: string,
+   drug: string
+ }
 @Injectable({
   providedIn: 'root'
 })
@@ -22,14 +39,16 @@ export class IdeaService {
   private ideas: Observable<Idea[]>;
   private ideaCollection: AngularFirestoreCollection<Idea>;
 
-  private chemCollection: AngularFirestoreCollection<Idea>;
-  private chems: Observable<Idea[]>;
-  steve: AngularFirestoreCollection;
-  hosilist: any;
- 
+  private chemCollection: AngularFirestoreCollection<Steve>;
+  private chems: Observable<Steve[]>;
+
+  private profile: Observable<Profile[]>
+  private profileCollection: AngularFirestoreCollection<Profile>;
+
   constructor(private afs: AngularFirestore) {
     this.ideaCollection = this.afs.collection<Idea>('hospital');
-    this.chemCollection = this.afs.collection<Idea>('chemist');
+    this.chemCollection = this.afs.collection<Steve>('chemist');
+    this.profileCollection = this.afs.collection<Profile>('users');
     this.ideas = this.ideaCollection.snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
@@ -48,8 +67,25 @@ export class IdeaService {
         });
       })
     );
+    this.profile = this.profileCollection.snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+          return { id, ...data};
+        });
+      })
+    )
   }
- 
+  getProfile(id: string): Observable<Profile> {
+    return this.profileCollection.doc<Profile>(id).valueChanges().pipe(
+      take(1),
+      map(profile=>{
+        profile.id=id;
+        return profile
+      })
+    );
+  }
   getIdeas(): Observable<Idea[]> {
     return this.ideas;
   }
@@ -64,17 +100,17 @@ export class IdeaService {
       })
     );
   }
-  getChems(): Observable<Idea[]> {
+  getChems(): Observable<Steve[]> {
     return this.chems;
   }
   
  
-  getchem(id: string): Observable<Idea> {
-    return this.ideaCollection.doc<Idea>(id).valueChanges().pipe(
+  getchem(id: string): Observable<Steve> {
+    return this.chemCollection.doc<Steve>(id).valueChanges().pipe(
       take(1),
-      map(idea => {
-        idea.id = id;
-        return idea
+      map(chem => {
+        chem.id = id;
+        return chem
       })
     );
   }

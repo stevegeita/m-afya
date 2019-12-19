@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-equimed',
@@ -10,6 +11,7 @@ export class EquimedPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    IonicModule.forRoot({ swipeBackEnabled: true })
   }
 
 }

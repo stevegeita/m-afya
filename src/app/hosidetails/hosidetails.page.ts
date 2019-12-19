@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IdeaService, Idea } from '../idea.service';
-import { ToastController } from '@ionic/angular';
+import { ToastController, IonicModule } from '@ionic/angular';
 
   
 @Component({
@@ -31,6 +31,7 @@ export class HosidetailsPage implements OnInit {
   }
  
   ionViewWillEnter() {
+    IonicModule.forRoot({ swipeBackEnabled: true })
     if (this.id) {
       this.ideaService.getIdea(this.id).subscribe(idea => {
         this.idea = idea;

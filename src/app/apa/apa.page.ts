@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-apa',
@@ -10,6 +11,8 @@ export class ApaPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    IonicModule.forRoot({ swipeBackEnabled: true })
   }
+  
 
 }

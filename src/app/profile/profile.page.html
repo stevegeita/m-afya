@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile Page</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logOut()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-list-header> Personal Information </ion-list-header>
+    <h2>Name:<p class="ion-text-capitalize">{{idea.firstame}} {{idea.lastname}}</p></h2>
+    <h2>Email: <p>{{idea.email}}</p></h2>
+    <h2>Age: <p>{{idea.age}}</p></h2>
+
+    <h2>Insurance cover: <p>{{idea.insurance}}</p></h2>
+    <h2>Emergency Contact: <p>{{idea.contact}}</p></h2>
+    <h2>Allergies: <p>{{idea.allergies}}</p></h2>
+    <h2>Blood group type: <p>{{idea.blood}}</p></h2>
+    <h2>Drug interactions: <p>{{idea.drug}}</p></h2>
+  </ion-list>
+</ion-content>

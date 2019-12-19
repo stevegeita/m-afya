@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { AuthGuard } from '../services/user/auth.guard';
 
 const routes: Routes = [
   {
@@ -48,12 +49,12 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'search',
+        path: 'hosimap',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../search/search.module').then(m => m.SearchPageModule)
+              import('../hosimap/hosimap.module').then(m => m.HosimapPageModule)
           }
         ]
       },
@@ -177,6 +178,57 @@ const routes: Routes = [
           }
         ]
       },
+      {
+        path: 'login',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../login/login.module').then(m => m.LoginPageModule)
+          }
+        ]
+      },
+      {
+        path: 'profile',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../profile/profile.module').then(m => m.ProfilePageModule)
+          }
+        ]
+      },
+      {
+        path: 'register',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../register/register.module').then(m => m.RegisterPageModule)
+          }
+        ]
+      },
+      {
+        path: 'reset',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../reset/reset.module').then(m => m.ResetPageModule)
+          }
+        ]
+      },
+      // {
+      //   path: 'profile',
+      //   children: [
+      //     {
+      //       path: '',
+      //       loadChildren: () =>
+      //         import('../profile/profile.module').then(m => m.ProfilePageModule),
+      //         canActivate: [AuthGuard],
+      //     }
+      //   ]
+      // },
       {
         path: '',
         redirectTo: '/tabs/home',
